@@ -1,0 +1,263 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    overflow-x: hidden;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    background-image: url("../assets/background.jpg");
+    background-repeat: no-repeat;
+    background-color: black;
+    scroll-behavior: smooth;
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+}
+
+.logo {
+    max-width: 100%;
+    height: 50px;
+}
+
+nav {
+    justify-content: space-between;
+    align-items: center;
+    min-height: 3rem;
+    padding: 0.3em 1em;
+    max-width: 100vw;
+    background-color: black;
+}
+
+nav ul {
+    justify-content: space-around;
+    min-width: 30rem;
+    list-style: none;
+}
+
+nav * li {
+    padding: 1em;
+}
+
+nav * a {
+    color: #fff;
+    text-decoration: none;
+    border-radius: 1em;
+}
+
+nav * a :hover {
+    color: #fff;
+    background: rgb(33, 33, 33);
+}
+
+#menu {
+    display: none;
+    font-size: 1.5rem;
+    color: #fff;
+}
+
+@media (max-width: 600px) {
+    #menu {
+        display: block;
+    }
+    nav ul {
+        height: 100vh;
+        position: absolute;
+        justify-content: initial;
+        align-items: center;
+        flex-direction: column;
+        min-width: 100vw;
+        left: -100%;
+        top: 3.6rem;
+        background-color: #2A272A;
+        transition: 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        z-index: 3;
+    }
+    nav ul.active {
+        left: 0%;
+    }
+}
+
+
+/* Header Css */
+
+.header .container {
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 80vh;
+    color: #fff;
+}
+
+.header .container img {
+    width: 300px;
+    margin-bottom: 2rem;
+}
+
+.header .container h1 {
+    animation: gradientColor 5s linear infinite;
+}
+
+.glass {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 400px) {
+    .header .container h1 {
+        font-size: 8vw;
+    }
+}
+
+
+/* services */
+
+.services {
+    padding: 2rem 0;
+    min-height: 100vh;
+    width: 100vw;
+    flex-direction: column;
+    text-align: center;
+    background-image: url("../assets/servicesBack.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.services h2,
+.services h3 {
+    color: #fff;
+}
+
+.services .container1 {
+    flex-direction: column;
+}
+
+.services .container1 .card {
+    min-height: 26rem;
+    color: #fff;
+    margin: 1rem;
+    padding: 1rem 0.8rem;
+}
+
+.services .container1 .clubs {
+    color: #000000;
+    flex-direction: column;
+}
+
+
+/* animations */
+
+@keyframes gradientColor {
+    0% {
+        color: #FF10F0;
+    }
+    25% {
+        color: #00fffc;
+    }
+    50% {
+        color: #1F51FF;
+    }
+    75% {
+        color: #fc00ff;
+    }
+    75% {
+        color: #fffc00;
+    }
+    100% {
+        color: #FF10F0;
+    }
+}
+
+
+/* About Css */
+
+.about {
+    padding: 5rem 0;
+    position: relative;
+    background-color: #000;
+}
+
+.about h2 {
+    color: #fff;
+    text-align: center;
+}
+
+.about .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-weight: bold;
+    padding: 1rem;
+}
+
+.about .container .textbox {
+    position: relative;
+    padding: 1.5rem;
+    margin: 6rem;
+    margin-top: 0;
+    width: 100%;
+    min-width: 20rem;
+    max-width: 50rem;
+    height: 100%;
+    font-size: 1.2rem;
+    border: 2px solid #1f9bcf;
+    color: #fff;
+    z-index: 1;
+}
+
+.about .container .textbox::after {
+    position: absolute;
+    content: '';
+    display: block;
+    height: 100%;
+    width: 100%;
+    background-color: #1f9bcf;
+    box-shadow: 0px 0px 10px 5px #1f9bcf;
+    transform: translate(10%, -60%);
+    z-index: -1;
+}
+
+.about .container .textbox:nth-child(2)::after {
+    transform: translate(-10%, -60%);
+}
+
+@media (max-width: 500px) {
+    .about .container .textbox::after {
+        background-color: transparent;
+        box-shadow: none;
+    }
+}
+
+
+/* Scrollbar Css */
+
+::-webkit-scrollbar {
+    position: absolute;
+    width: 4px;
+}
+
+::-webkit-scrollbar-track {
+    background: #555;
+}
+
+ ::-webkit-scrollbar-thumb {
+    background: #000000;
+}
+
+ ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}

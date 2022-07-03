@@ -22,6 +22,4 @@ app.use('/', (req, res) => {
     res.sendFile('/index.html');
 })
 
-
-
-app.listen(3000, () => { console.log('Listening') })
+app.listen(process.env.PORT || 3000, () => { console.log('Listening') })
